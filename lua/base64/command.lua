@@ -1,6 +1,6 @@
 local module = {}
 
-local encoding = require("encoding")
+local encoding = require("base64.encoding")
 
 function module.encode()
   module.process_selection(true)
