@@ -2,6 +2,8 @@
 
 base64.nvim provides commands for encoding and decoding base64 string implemented in pure lua. There are no 3rd-party dependencies required.
 
+![base64 nvim](https://user-images.githubusercontent.com/3747445/165766733-90970b88-bdb5-4e32-862a-b623fb09bbde.gif)
+
 ## Requirements
 
 Neovim 0.6+ (for lua support)
