@@ -7,23 +7,23 @@ local module = {}
 
 -- bitshift functions (<<, >> equivalent)
 -- shift left
-function lsh(value, shift)
+local function lsh(value, shift)
 	return (value * (2 ^ shift)) % 256
 end
 
 -- shift right
-function rsh(value, shift)
+local function rsh(value, shift)
 	return math.floor(value / 2 ^ shift) % 256
 end
 
 -- return single bit (for OR)
-function bit(x, b)
+local function bit(x, b)
 	return (x % 2 ^ b - x % 2 ^ (b - 1) > 0)
 end
 
 -- logic OR for number values
-function lor(x, y)
-	result = 0
+local function lor(x, y)
+	local result = 0
 	for p = 1, 8 do
 		result = result + (((bit(x, p) or bit(y, p)) == true) and 2 ^ (p - 1) or 0)
 	end
@@ -100,7 +100,7 @@ local base64chars = {
 
 -- function encode
 -- encodes input string to base64.
-function enc(data)
+local function enc(data)
 	local bytes = {}
 	local result = ""
 	for spos = 0, string.len(data) - 1, 3 do
@@ -192,7 +192,7 @@ module.base64bytes = base64bytes
 
 -- function decode
 -- decode base64 input to string
-function dec(data)
+local function dec(data)
 	local chars = {}
 	local result = ""
 	for dpos = 0, string.len(data) - 1, 4 do
